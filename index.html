@@ -24,18 +24,21 @@
 
     .title-section {
       text-align: center;
-      font-size: 4em; /* أكبر العنوان */
+      font-size: 4.5em; /* أكبر العنوان */
       margin-bottom: 50px;
       color: #b5ff90;
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+      animation-delay: 0.1s;
     }
 
     .cards-container {
       display: flex;
       flex-direction: column; /* الكروت تحت بعض */
       align-items: center;
-      gap: 40px; /* تباعد أكبر بين الكروت */
+      gap: 50px; /* تباعد أكبر بين الكروت */
       margin-bottom: 80px;
-      max-width: 400px; /* عشان ما تكبر كثير */
+      max-width: 450px; /* أكبر عرض للحاوية */
       margin-left: auto;
       margin-right: auto;
     }
@@ -43,44 +46,51 @@
     .card {
       background-color: rgba(255, 255, 255, 0.06);
       border: 1px solid #2ecc71;
-      border-radius: 20px;
-      padding: 35px;
-      width: 100%; /* يعملي العرض كامل داخل الحاوية */
-      max-width: 400px; /* حجم الكرت أكبر */
+      border-radius: 24px;
+      padding: 45px 40px;
+      width: 100%; /* عرض كامل */
+      max-width: 450px; /* أكبر حجم للكرت */
       text-align: center;
       backdrop-filter: blur(6px);
       transition: 0.3s;
       box-sizing: border-box;
+      opacity: 0;
+      animation: fadeIn 0.8s ease forwards;
     }
 
+    .card:nth-child(1) { animation-delay: 0.3s; }
+    .card:nth-child(2) { animation-delay: 0.5s; }
+    .card:nth-child(3) { animation-delay: 0.7s; }
+    .card:nth-child(4) { animation-delay: 0.9s; }
+
     .card:hover {
-      transform: scale(1.05);
+      transform: scale(1.07);
       border-color: #b5ff90;
     }
 
     .card svg {
-      width: 70px;
-      height: 70px;
-      margin-bottom: 25px;
+      width: 90px;
+      height: 90px;
+      margin-bottom: 30px;
       fill: #b5ff90;
     }
 
     .card h3 {
-      font-size: 2em;
-      margin: 20px 0;
+      font-size: 2.4em;
+      margin: 25px 0;
     }
 
     .card p {
-      font-size: 1.2em;
+      font-size: 1.4em;
       color: #eee;
     }
 
     .card img {
-      width: 240px; /* حجم الصورة اللي طلبته مصغر شوي */
+      width: 320px; /* أكبر الصور */
       height: auto;
       object-fit: contain;
-      border-radius: 12px;
-      margin-bottom: 20px;
+      border-radius: 16px;
+      margin-bottom: 25px;
       display: block;
       margin-left: auto;
       margin-right: auto;
@@ -88,14 +98,14 @@
 
     .buy-button {
       display: inline-block;
-      margin-top: 15px;
-      padding: 14px 35px;
+      margin-top: 18px;
+      padding: 18px 45px;
       background-color: #2ecc71;
       color: black;
       text-decoration: none;
-      border-radius: 12px;
+      border-radius: 14px;
       font-weight: bold;
-      font-size: 1.2em;
+      font-size: 1.3em;
       transition: background-color 0.3s;
     }
 
@@ -106,10 +116,20 @@
     footer {
       text-align: center;
       padding: 30px 10px;
-      font-size: 1.2em;
+      font-size: 1.3em;
       background-color: rgba(0,0,0,0.6);
       border-top: 1px solid #2ecc71;
       margin-top: 40px;
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+      animation-delay: 1.1s;
+    }
+
+    /* انميشن الفيد إن */
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
     }
   </style>
 </head>
@@ -140,29 +160,29 @@
       </div>
     </div>
 
-    <div class="title-section">منتجات مقترحة من خادم رويال</div>
+    <div class="title-section" style="animation-delay: 1.3s;">منتجات مقترحة من خادم رويال</div>
 
     <div class="cards-container">
-      <div class="card">
-        <img src="https://cdn.discordapp.com/attachments/1385708483462299669/1385718774111666186/image.png" alt="نيترو شهر">
+      <div class="card" style="animation-delay: 1.5s;">
+        <img src="https://cdn.discordapp.com/attachments/1385708483462299669/1385718774111666186/image.png" alt="نيترو شهر" />
         <h3>نيترو شهر</h3>
         <a href="https://discord.gg/cHsq5wTWjV" class="buy-button">شراء</a>
       </div>
 
-      <div class="card">
-        <img src="https://cdn.discordapp.com/attachments/1385708483462299669/1385718774111666186/image.png" alt="بوستات ديسكورد">
+      <div class="card" style="animation-delay: 1.7s;">
+        <img src="https://cdn.discordapp.com/attachments/1385708483462299669/1385718774111666186/image.png" alt="بوستات ديسكورد" />
         <h3>بوستات ديسكورد</h3>
         <a href="https://discord.gg/cHsq5wTWjV" class="buy-button">شراء</a>
       </div>
 
-      <div class="card">
-        <img src="https://cdn.discordapp.com/attachments/1385708483462299669/1385718774111666186/image.png" alt="حسابات">
+      <div class="card" style="animation-delay: 1.9s;">
+        <img src="https://cdn.discordapp.com/attachments/1385708483462299669/1385718774111666186/image.png" alt="حسابات" />
         <h3>حسابات</h3>
         <a href="https://discord.gg/cHsq5wTWjV" class="buy-button">شراء</a>
       </div>
 
-      <div class="card">
-        <img src="https://cdn.discordapp.com/attachments/1385708483462299669/1385718774111666186/image.png" alt="سيرفرات">
+      <div class="card" style="animation-delay: 2.1s;">
+        <img src="https://cdn.discordapp.com/attachments/1385708483462299669/1385718774111666186/image.png" alt="سيرفرات" />
         <h3>سيرفرات</h3>
         <a href="https://discord.gg/cHsq5wTWjV" class="buy-button">شراء</a>
       </div>
