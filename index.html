@@ -114,11 +114,11 @@
 
     .card img {
       width: 100%;
-      height: 360px;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
       border-radius: 20px;
       margin-bottom: 25px;
-      background: #000;
+      background: transparent;
     }
 
     .buy-button {
@@ -191,7 +191,7 @@
 
     <!-- Hero Section -->
     <div class="hero">
-      <h1>موقع ولا فالأحلام <span>رويال</span></h1>
+      <h1>فوق كل شيء <span>رويال</span></h1>
       <p>هل تريد بوستات لسيرفرك؟ ، هل تبحث عن نايترو آمن لحسابك؟<br>سيرفرنا الأرخص في الشرق الأوسط.</p>
       <div class="buttons">
         <a href="https://discord.gg/cHsq5wTWjV" class="btn-discord">ديسكورد</a>
@@ -225,19 +225,19 @@
     <div class="title-section">منتجات مقترحة من خادم رويال</div>
     <div class="cards-container">
       <div class="card">
-        <img src="https://i.postimg.cc/qMmdtTFW/image.png" alt="نيترو شهر">
+        <img src="https://i.postimg.cc/yxYbBJ7x/image.png" alt="نيترو شهر">
         <h3>نيترو شهر</h3>
         <a href="https://discord.gg/cHsq5wTWjV" class="buy-button">شراء</a>
       </div>
 
       <div class="card">
-        <img src="https://i.postimg.cc/qMmdtTFW/image.png" alt="بوستات ديسكورد">
+        <img src="https://i.postimg.cc/yxYbBJ7x/image.png" alt="بوستات ديسكورد">
         <h3>بوستات ديسكورد</h3>
         <a href="https://discord.gg/cHsq5wTWjV" class="buy-button">شراء</a>
       </div>
 
       <div class="card">
-        <img src="https://i.postimg.cc/qMmdtTFW/image.png" alt="حسابات">
+        <img src="https://i.postimg.cc/yxYbBJ7x/image.png" alt="حسابات">
         <h3>حسابات</h3>
         <a href="https://discord.gg/cHsq5wTWjV" class="buy-button">شراء</a>
       </div>
@@ -269,7 +269,7 @@
         const isActive = q.classList.contains('active');
         questions.forEach(q => q.classList.remove('active'));
         document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
-        
+
         if (!isActive) {
           q.classList.add('active');
           q.nextElementSibling.style.display = 'block';
