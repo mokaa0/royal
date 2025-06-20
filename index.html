@@ -1,1 +1,204 @@
-b
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>رويال ستور</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Changa:wght@600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Changa', sans-serif;
+      background-image: url('https://cdn.discordapp.com/attachments/1364647589403955280/1385712460312608920/image.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 80px 30px;
+      min-height: 100vh;
+    }
+
+    .title-section {
+      text-align: center;
+      font-size: 5em;
+      margin-bottom: 50px;
+      color: #b5ff90;
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+      animation-delay: 0.1s;
+    }
+
+    .cards-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+      margin-bottom: 80px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.06);
+      border: 1px solid #2ecc71;
+      border-radius: 30px;
+      padding: 50px 45px;
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+      backdrop-filter: blur(6px);
+      transition: 0.3s;
+      box-sizing: border-box;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    /* تأخير انميشن لكل كرت */
+    .card:nth-child(1) { animation-delay: 0.3s; }
+    .card:nth-child(2) { animation-delay: 0.6s; }
+    .card:nth-child(3) { animation-delay: 0.9s; }
+    .card:nth-child(4) { animation-delay: 1.2s; }
+    /* للمنتجات المقترحة (الثاني مجموعة كروت) */
+    .cards-container:nth-of-type(2) .card:nth-child(1) { animation-delay: 1.5s; }
+    .cards-container:nth-of-type(2) .card:nth-child(2) { animation-delay: 1.8s; }
+    .cards-container:nth-of-type(2) .card:nth-child(3) { animation-delay: 2.1s; }
+    .cards-container:nth-of-type(2) .card:nth-child(4) { animation-delay: 2.4s; }
+
+    .card:hover {
+      transform: scale(1.08);
+      border-color: #b5ff90;
+    }
+
+    .card svg {
+      width: 110px;
+      height: 110px;
+      margin-bottom: 35px;
+      fill: #b5ff90;
+    }
+
+    .card h3 {
+      font-size: 3em;
+      margin: 30px 0;
+    }
+
+    .card p {
+      font-size: 1.6em;
+      color: #eee;
+    }
+
+    .card img {
+      width: 450px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 20px;
+      margin-bottom: 35px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .buy-button {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 20px 55px;
+      background-color: #2ecc71;
+      color: black;
+      text-decoration: none;
+      border-radius: 16px;
+      font-weight: bold;
+      font-size: 1.5em;
+      transition: background-color 0.3s;
+    }
+
+    .buy-button:hover {
+      background-color: #27ae60;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 1.4em;
+      background-color: rgba(0,0,0,0.6);
+      border-top: 1px solid #2ecc71;
+      margin-top: 50px;
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+      transform: translateY(30px);
+      animation-delay: 2.7s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="title-section">لماذا رويال؟</div>
+
+    <div class="cards-container">
+      <div class="card">
+        <!-- نجمة -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        <h3>منتجات مميزة</h3>
+        <p>نسعد بتقديم تشكيلات راقية تجمع بين الجودة والسعر.</p>
+      </div>
+
+      <div class="card">
+        <!-- عملات -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3C7.59 3 4 4.79 4 7s3.59 4 8 4 8-1.79 8-4-3.59-4-8-4zm0 6c-3.31 0-6-.9-6-2s2.69-2 6-2 6 .9 6 2-2.69 2-6 2zM4 12v2c0 2.21 3.59 4 8 4s8-1.79 8-4v-2c-1.18.99-3.52 1.5-6.05 1.5S5.18 12.99 4 12zm0 4v2c0 2.21 3.59 4 8 4s8-1.79 8-4v-2c-1.18.99-3.52 1.5-6.05 1.5S5.18 16.99 4 16z"/></svg>
+        <h3>أسعار مثالية</h3>
+        <p>ترتيبنا يعتمد على الجمع بين الجودة والرخص.</p>
+      </div>
+
+      <div class="card">
+        <!-- دعم فني -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1a10 10 0 0 0-10 10v2a10 10 0 0 0 10 10h1a1 1 0 0 0 1-1v-3h-2v2h-1a8 8 0 0 1-8-8v-2a8 8 0 0 1 16 0v2a8 8 0 0 1-1.23 4.3 1 1 0 0 0 .17 1.2l1.33 1.33a1 1 0 0 0 1.41 0l.01-.01a1 1 0 0 0 0-1.41l-1.33-1.33a10 10 0 0 0 1.35-5.08v-2A10 10 0 0 0 12 1z"/></svg>
+        <h3>دعم فني</h3>
+        <p>دعم لحل جميع المشاكل بسرعة وسهولة.</p>
+      </div>
+    </div>
+
+    <div class="title-section" style="animation-delay: 1.4s;">منتجات مقترحة من خادم رويال</div>
+
+    <div class="cards-container">
+      <div class="card">
+        <img src="https://cdn.discordapp.com/attachments/1385708483462299669/1385718774111666186/image.png" alt="نيترو شهر" />
+        <h3>نيترو شهر</h3>
+        <a href="https://discord.gg/cHsq5wTWjV" class="buy-button">شراء</a>
+      </div>
+
+      <div class="card">
+        <img src="https://cdn.discordapp.com/attachments/1385708483462299669/1385718774111666186/image.png" alt="بوستات ديسكورد" />
+        <h3>بوستات ديسكورد</h3>
+        <a href="https://discord.gg/cHsq5wTWjV" class="buy-button">شراء</a>
+      </div>
+
+      <div class="card">
+        <img src="https://cdn.discordapp.com/attachments/1385708483462299669/1385718774111666186/image.png" alt="حسابات" />
+        <h3>حسابات</h3>
+        <a href="https://discord.gg/cHsq5wTWjV" class="buy-button">شراء</a>
+      </div>
+
+      <div class="card">
+        <img src="https://cdn.discordapp.com/attachments/1385708483462299669/1385718774111666186/image.png" alt="سيرفرات" />
+        <h3>سيرفرات</h3>
+        <a href="https://discord.gg/cHsq5wTWjV" class="buy-button">شراء</a>
+      </div>
+    </div>
+
+    <footer>
+      جميع الحقوق محفوظة © رويال ستور
+    </footer>
+  </div>
+</body>
+</html>
