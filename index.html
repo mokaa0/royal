@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>رويال ستور</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Changa:wght@600&display=swap');
@@ -9,91 +9,137 @@
     body {
       margin: 0;
       font-family: 'Changa', sans-serif;
-      background-image: url('https://cdn.discordapp.com/attachments/1364647589403955280/1385712460312608920/image.png');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
+      background: #111;
       color: white;
     }
 
     .overlay {
-      background-color: rgba(0, 0, 0, 0.75);
-      padding: 80px 30px;
-      min-height: 100vh;
+      background: rgba(0,0,0,0.85);
+      padding: 60px 20px;
     }
 
-    .title-section {
+    .site-tag {
       text-align: center;
-      font-size: 3.5em;
-      margin-bottom: 50px;
-      color: #b5ff90;
+      font-size: 4em;
+      margin-bottom: 20px;
     }
+
+    .site-tag .royal { color: #2ecc71; }
+    .site-tag .text-white { color: white; }
+
+    .subtitle {
+      text-align: center;
+      font-size: 1.2em;
+      margin-bottom: 50px;
+      color: #eee;
+    }
+
+    .subtitle span {
+      display: block;
+      margin: 8px 0;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .btn {
+      margin: 10px;
+      display: inline-block;
+      padding: 14px 30px;
+      font-size: 1.2em;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .btn-discord {
+      background: #2ecc71;
+      color: #111;
+    }
+
+    .btn-discord:hover { background: #27ae60; }
+
+    .btn-login {
+      background: white;
+      color: #111;
+    }
+
+    .btn-login:hover { background: #eee; }
 
     .cards-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 60px;
+      gap: 80px;
       margin-bottom: 80px;
     }
 
     .card {
-      background-color: rgba(255, 255, 255, 0.06);
-      border: 1.5px solid #2ecc71;
-      border-radius: 20px;
-      padding: 45px;
-      width: 440px;
+      background: rgba(255,255,255,0.05);
+      border: 2px solid #2ecc71;
+      border-radius: 24px;
+      padding: 60px;
+      width: 500px;
       text-align: center;
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
       transition: transform 0.4s, border-color 0.4s;
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(30px);
       animation-fill-mode: forwards;
+      position: relative;
     }
 
     .card:hover {
-      transform: scale(1.08);
+      transform: scale(1.05);
       border-color: #b5ff90;
-      transition-duration: 0.3s;
     }
 
     .card svg {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 25px;
+      width: 80px;
+      height: 80px;
+      margin-bottom: 30px;
       fill: #b5ff90;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { filter: drop-shadow(0 0 4px #2ecc71); }
+      to { filter: drop-shadow(0 0 12px #2ecc71); }
     }
 
     .card h3 {
-      font-size: 2em;
+      font-size: 2.4em;
       margin: 20px 0;
     }
 
     .card p {
-      font-size: 1.2em;
-      color: #eee;
-      line-height: 1.4;
+      font-size: 1.3em;
+      color: #ddd;
+      line-height: 1.5;
     }
 
     .card img {
       width: 100%;
-      height: 260px;
+      height: 300px;
       object-fit: contain;
-      border-radius: 15px;
-      margin-bottom: 20px;
-      background: #111;
+      border-radius: 20px;
+      margin-bottom: 25px;
+      background: #000;
     }
 
     .buy-button {
       display: inline-block;
-      margin-top: 15px;
-      padding: 14px 35px;
+      margin-top: 20px;
+      padding: 16px 40px;
       background-color: #2ecc71;
       color: black;
       text-decoration: none;
-      border-radius: 14px;
+      border-radius: 18px;
       font-weight: bold;
-      font-size: 1.2em;
+      font-size: 1.4em;
       transition: background-color 0.3s;
     }
 
@@ -101,98 +147,176 @@
       background-color: #27ae60;
     }
 
-    footer {
-      text-align: center;
-      padding: 30px 10px;
-      font-size: 1em;
-      background-color: rgba(0,0,0,0.6);
+    /* أنيميشن الظهور */
+    .card:nth-child(1) { animation: fadeUp 0.8s ease forwards; animation-delay: 0.3s; }
+    .card:nth-child(2) { animation: fadeUp 0.8s ease forwards; animation-delay: 0.7s; }
+    .card:nth-child(3) { animation: fadeUp 0.8s ease forwards; animation-delay: 1.1s; }
+    .card:nth-child(4) { animation: fadeUp 0.8s ease forwards; animation-delay: 1.5s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .faq-section {
+      max-width: 600px;
+      margin: 60px auto;
+    }
+
+    .faq-item {
+      border-top: 1px solid #2ecc71;
+      padding: 16px 0;
+      cursor: pointer;
+    }
+
+    .faq-item:first-child { border-top: none; }
+
+    .faq-question {
+      display: flex;
+      align-items: center;
+      font-size: 1.3em;
+      color: #eee;
+    }
+
+    .faq-question .plus {
+      margin-left: 10px;
+      font-size: 1.5em;
+      transition: transform 0.3s;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      color: #ccc;
+      margin-top: 8px;
+      font-size: 1.1em;
+    }
+
+    .faq-open .faq-answer { max-height: 200px; }
+
+    .faq-open .faq-question {
+      color: #2ecc71;
+    }
+
+    .faq-open .faq-question .plus {
+      transform: rotate(45deg);
+      color: #2ecc71;
+    }
+
+    .about {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 20px;
+      font-size: 1.2em;
+      color: #ddd;
       border-top: 1px solid #2ecc71;
     }
 
-    /* Animation delays for cards */
-    .card:nth-child(1) {
-      animation: fadeUp 0.7s ease forwards;
-      animation-delay: 0.3s;
-    }
-    .card:nth-child(2) {
-      animation: fadeUp 0.7s ease forwards;
-      animation-delay: 0.7s;
-    }
-    .card:nth-child(3) {
-      animation: fadeUp 0.7s ease forwards;
-      animation-delay: 1.1s;
-    }
-    .card:nth-child(4) {
-      animation: fadeUp 0.7s ease forwards;
-      animation-delay: 1.5s;
-    }
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    footer {
+      text-align: center;
+      margin: 40px 0;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
   <div class="overlay">
-    <div class="title-section">لماذا رويال؟</div>
+    <div class="site-tag">
+      <span class="text-white">فوق؜ كل شيء</span>
+      <span class="royal">ريـوال</span>
+    </div>
+    <div class="subtitle">
+      <span>هل تريد بوستات لسيرفرك؟</span>
+      <span>هل تبحث عن نايترو آمن لحسابك؟</span>
+      <span>سيرفرنا الأرخص في الشرق الأوسط.</span>
+    </div>
+    <div class="btn-container">
+      <a href="https://discord.gg/cHsq5wTWjV" class="btn btn-discord">ديسكورد</a>
+      <a href="https://discord.com/login" class="btn btn-login">تسجيل الدخول</a>
+    </div>
 
+    <div class="title-section">لماذا رويال؟</div>
     <div class="cards-container">
       <div class="card">
-        <!-- نجمة -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 
+                   5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/>
+        </svg>
         <h3>منتجات مميزة</h3>
         <p>نسعد بتقديم تشكيلات راقية تجمع بين الجودة والسعر.</p>
       </div>
-
       <div class="card">
-        <!-- عملات -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3C7.59 3 4 4.79 4 7s3.59 4 8 4 8-1.79 8-4-3.59-4-8-4zm0 6c-3.31 0-6-.9-6-2s2.69-2 6-2 6 .9 6 2-2.69 2-6 2zM4 12v2c0 2.21 3.59 4 8 4s8-1.79 8-4v-2c-1.18.99-3.52 1.5-6.05 1.5S5.18 12.99 4 12zm0 4v2c0 2.21 3.59 4 8 4s8-1.79 8-4v-2c-1.18.99-3.52 1.5-6.05 1.5S5.18 16.99 4 16z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 3C7.59 3 4 4.79 4 7s3.59 4 8 4 8-1.79 8-4...
+            "/>
+        </svg>
         <h3>أسعار مثالية</h3>
-        <p>ترتيبنا يعتمد على الجمع بين الجودة والرخص.</p>
+        <p>الجودة والرخص يجتمعان لدينا.</p>
       </div>
-
       <div class="card">
-        <!-- دعم فني -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1a10 10 0 0 0-10 10v2a10 10 0 0 0 10 10h1a1 1 0 0 0 1-1v-3h-2v2h-1a8 8 0 0 1-8-8v-2a8 8 0 0 1 16 0v2a8 8 0 0 1-1.23 4.3 1 1 0 0 0 .17 1.2l1.33 1.33a1 1 0 0 0 1.41 0l.01-.01a1 1 0 0 0 0-1.41l-1.33-1.33a10 10 0 0 0 1.35-5.08v-2A10 10 0 0 0 12 1z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 1a10 10 0 0 0-10 10v2a10 10 0...
+            "/>
+        </svg>
         <h3>دعم فني</h3>
-        <p>دعم لحل جميع المشاكل بسرعة وسهولة.</p>
+        <p>دعم لحل كل المشاكل بأسرع وقت.</p>
       </div>
     </div>
 
-    <div class="title-section">منتجات مقترحة من خادم رويال</div>
-
+    <div class="title-section">منتجات مقترحة</div>
     <div class="cards-container">
       <div class="card">
-        <img src="https://i.postimg.cc/4Nc3Vnzj/image.png" alt="نيترو شهر" />
+        <img src="https://i.postimg.cc/4Nc3Vnzj/image.png" alt="نيترو شهر">
         <h3>نيترو شهر</h3>
         <a href="https://discord.gg/cHsq5wTWjV" class="buy-button">شراء</a>
       </div>
-
       <div class="card">
-        <img src="https://i.postimg.cc/4Nc3Vnzj/image.png" alt="بوستات ديسكورد" />
-        <h3>بوستات ديسكورد</h3>
+        <img src="https://i.postimg.cc/4Nc3Vnzj/image.png" alt="بوستات">
+        <h3>بوستات سيرفر</h3>
         <a href="https://discord.gg/cHsq5wTWjV" class="buy-button">شراء</a>
       </div>
-
       <div class="card">
-        <img src="https://i.postimg.cc/4Nc3Vnzj/image.png" alt="حسابات" />
+        <img src="https://i.postimg.cc/4Nc3Vnzj/image.png" alt="حسابات">
         <h3>حسابات</h3>
         <a href="https://discord.gg/cHsq5wTWjV" class="buy-button">شراء</a>
       </div>
+    </div>
 
-      <div class="card">
-        <img src="https://i.postimg.cc/4Nc3Vnzj/image.png" alt="سيرفرات" />
-        <h3>سيرفرات</h3>
-        <a href="https://discord.gg/cHsq5wTWjV" class="buy-button">شراء</a>
+    <div class="faq-section">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          ما هي مدة استلام الطلب؟
+          <span class="plus">+</span>
+        </div>
+        <div class="faq-answer">
+          لا يوجد مدة معينة لكن التسليم لا يتعدى 24 ساعة كحد أقصى.
+        </div>
       </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          هل خادم رويال يضمن جميع بائعينه؟
+          <span class="plus">+</span>
+        </div>
+        <div class="faq-answer">
+          لا، خادم رويال لا يضمن جميع بائعينه لكن يمكنك التأكد من خلال التسليمات أو الآراء.
+        </div>
+      </div>
+    </div>
+
+    <div class="about">
+      <h3>من نحن؟</h3>
+      <p>نحن خادم رويال، منصة تجمع أفضل العروض وأكثرها أمانًا لكافة خدمات الديسكورد.</p>
     </div>
 
     <footer>
       جميع الحقوق محفوظة © رويال ستور
     </footer>
   </div>
+
+  <script>
+    function toggleFaq(item) {
+      item.classList.toggle('faq-open');
+    }
+  </script>
 </body>
 </html>
