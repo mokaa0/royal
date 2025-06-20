@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>رويال ستور</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Changa:wght@600&display=swap');
@@ -24,70 +24,78 @@
 
     .title-section {
       text-align: center;
-      font-size: 3.5em;
+      font-size: 4em; /* أكبر العنوان */
       margin-bottom: 50px;
       color: #b5ff90;
     }
 
     .cards-container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
+      flex-direction: column; /* الكروت تحت بعض */
+      align-items: center;
+      gap: 40px; /* تباعد أكبر بين الكروت */
       margin-bottom: 80px;
+      max-width: 400px; /* عشان ما تكبر كثير */
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .card {
       background-color: rgba(255, 255, 255, 0.06);
       border: 1px solid #2ecc71;
-      border-radius: 16px;
-      padding: 25px;
-      width: 320px;
+      border-radius: 20px;
+      padding: 35px;
+      width: 100%; /* يعملي العرض كامل داخل الحاوية */
+      max-width: 400px; /* حجم الكرت أكبر */
       text-align: center;
       backdrop-filter: blur(6px);
       transition: 0.3s;
+      box-sizing: border-box;
     }
 
     .card:hover {
-      transform: scale(1.04);
+      transform: scale(1.05);
       border-color: #b5ff90;
     }
 
     .card svg {
-      width: 50px;
-      height: 50px;
-      margin-bottom: 20px;
+      width: 70px;
+      height: 70px;
+      margin-bottom: 25px;
       fill: #b5ff90;
     }
 
     .card h3 {
-      font-size: 1.5em;
-      margin: 15px 0;
+      font-size: 2em;
+      margin: 20px 0;
     }
 
     .card p {
-      font-size: 1em;
+      font-size: 1.2em;
       color: #eee;
     }
 
     .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 15px;
+      width: 240px; /* حجم الصورة اللي طلبته مصغر شوي */
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .buy-button {
       display: inline-block;
-      margin-top: 10px;
-      padding: 10px 25px;
+      margin-top: 15px;
+      padding: 14px 35px;
       background-color: #2ecc71;
       color: black;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 12px;
       font-weight: bold;
-      font-size: 1em;
+      font-size: 1.2em;
       transition: background-color 0.3s;
     }
 
@@ -98,9 +106,10 @@
     footer {
       text-align: center;
       padding: 30px 10px;
-      font-size: 1em;
+      font-size: 1.2em;
       background-color: rgba(0,0,0,0.6);
       border-top: 1px solid #2ecc71;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -135,25 +144,25 @@
 
     <div class="cards-container">
       <div class="card">
-        <img src="https://cdn.discordapp.com/attachments/1364647589403955280/1385712460312608920/image.png" alt="نيترو شهر">
+        <img src="https://cdn.discordapp.com/attachments/1385708483462299669/1385718774111666186/image.png" alt="نيترو شهر">
         <h3>نيترو شهر</h3>
         <a href="https://discord.gg/cHsq5wTWjV" class="buy-button">شراء</a>
       </div>
 
       <div class="card">
-        <img src="https://cdn.discordapp.com/attachments/1364647589403955280/1385712460312608920/image.png" alt="بوستات ديسكورد">
+        <img src="https://cdn.discordapp.com/attachments/1385708483462299669/1385718774111666186/image.png" alt="بوستات ديسكورد">
         <h3>بوستات ديسكورد</h3>
         <a href="https://discord.gg/cHsq5wTWjV" class="buy-button">شراء</a>
       </div>
 
       <div class="card">
-        <img src="https://cdn.discordapp.com/attachments/1364647589403955280/1385712460312608920/image.png" alt="حسابات">
+        <img src="https://cdn.discordapp.com/attachments/1385708483462299669/1385718774111666186/image.png" alt="حسابات">
         <h3>حسابات</h3>
         <a href="https://discord.gg/cHsq5wTWjV" class="buy-button">شراء</a>
       </div>
 
       <div class="card">
-        <img src="https://cdn.discordapp.com/attachments/1364647589403955280/1385712460312608920/image.png" alt="سيرفرات">
+        <img src="https://cdn.discordapp.com/attachments/1385708483462299669/1385718774111666186/image.png" alt="سيرفرات">
         <h3>سيرفرات</h3>
         <a href="https://discord.gg/cHsq5wTWjV" class="buy-button">شراء</a>
       </div>
